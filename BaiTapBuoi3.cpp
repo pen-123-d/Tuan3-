@@ -33,7 +33,39 @@ void Xuat_PT_LN_Tren_Tung_Cot(int a[100][100], int dong, int cot)
 		VT = a[0][i];
 	}
 }
+void Xuat_PT_DuongBien_Tren_Duoi_Trai_Phai(int a[100][100], int dong, int cot)
+{
+	cout << "Duong bien tren" << endl;
 
+	for (int j = 0; j < cot; j++)
+	{
+		cout << a[0][j] << " ";
+	}
+
+	cout << endl;
+	cout << "Duong bien duoi " << endl;
+
+	for (int j = 0; j < cot; j++)
+	{
+		cout << a[dong - 1][j] << " ";
+	}
+
+	cout << endl;
+	cout << "Duong bien ben trai " << endl;
+
+	for (int j = 0; j < dong; j++)
+	{
+		cout << a[j][0] << " ";
+	}
+	cout << endl;
+	cout << "Duong bien ben phai " << endl;
+	for (int i = 0; i < dong; i++)
+	{
+		cout << a[i][cot -1] << " ";
+	}
+	cout << endl;
+
+}
 int main()
 {
 	int a[100][100], dong, cot;
@@ -62,6 +94,8 @@ int main()
 	Tinh_Tong(a, dong, cot);
 	cout << "Tinh gia lon nhat tung cot" << endl;
 	Xuat_PT_LN_Tren_Tung_Cot(a, dong, cot);
-	system("pause");
+	cout << "Xuat cac phan tu o cac duong bien " << endl;
+	Xuat_PT_DuongBien_Tren_Duoi_Trai_Phai(a, dong, cot);
+		system("pause");
 
 }
