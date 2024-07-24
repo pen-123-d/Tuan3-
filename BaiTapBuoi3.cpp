@@ -4,7 +4,7 @@ using namespace std;
 
 void Tinh_Tong(int a[100][100], int dong, int cot)
 {
-	int tong=0;
+	int tong = 0;
 	for (int i = 0; i < dong; i++)
 	{
 		for (int j = 0; j < cot; j++)
@@ -16,7 +16,23 @@ void Tinh_Tong(int a[100][100], int dong, int cot)
 	}
 
 }
+void Xuat_PT_LN_Tren_Tung_Cot(int a[100][100], int dong, int cot)
+{
+	int VT = a[0][0];
 
+	for (int i = 0; i < cot; i++)
+	{
+		for (int j = 0; j < dong; j++)
+		{
+			if (VT < a[j][i])
+			{
+				VT = a[j][i];
+			}
+		}
+		cout << VT << endl;
+		VT = a[0][i];
+	}
+}
 
 int main()
 {
@@ -42,9 +58,10 @@ int main()
 		}
 		cout << endl;
 	}
-
+	cout << "Tinh tong tung dong " << endl;
 	Tinh_Tong(a, dong, cot);
-
+	cout << "Tinh gia lon nhat tung cot" << endl;
+	Xuat_PT_LN_Tren_Tung_Cot(a, dong, cot);
 	system("pause");
 
 }
